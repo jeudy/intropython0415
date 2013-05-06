@@ -20,6 +20,9 @@ class Estrella(object):
         self.tipo_espectral = espectral_type
         self.diametro = d
 
+    def __str__(self):
+        return "Estrella: %s - VMag: %s - Temp: %s" % (self.nombre, self.magnitud_visual, self.temperatura)
+
     def calcular_area(self):
         """Calcula el área de la estrella basado en su diametro"""
         
@@ -33,3 +36,20 @@ class Estrella(object):
         """
 
         return self.temperatura * self.calcular_area()
+
+class GiganteRoja(Estrella):
+    """Definición de la clase GiganteRoja
+    a partir de la clase Estrella
+
+    """
+    
+    def __init__(self, name, vmag):
+        # Vamos a asignarle valores por defecto basado en lo que conocemos sobre las gigantes rojas
+        Estrella.__init__(self, name, 3000, vmag, "M2", 7E5 * 1000)
+
+    def expandir(self, factor):
+        # Metodo expandir que aumenta el radio baja la temperatura como consecuencia
+        self.diametro += (self.diametro * factor)
+        self.temperatura -= self.temperatura * factor
+
+
