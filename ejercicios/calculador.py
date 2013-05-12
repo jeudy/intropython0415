@@ -27,17 +27,20 @@ def wallis(n):
 
 """Calcula la raiz cuadrada de un número x por aproximaciones sucesivas (método de Newton).
 err es a tolerancia al error para decidir cuando hay convergencia
+Parametro verbose = True hace que se impriman resultados intermedios
 """
 
-def raiz_newton(x, err):
-    resultado = 1.0
-    cociente = x / resultado
-    promedio = (resultado + cociente) / 2.0
-    diferencia = abs(promedio - resultado)
-    while(diferencia > err):
-        resultado = promedio
+def raiz_newton(x, err, verbose=False):
+    resultado = x/2.0
+    while(True):
         cociente = x / resultado
         promedio = (resultado + cociente) / 2.0
         diferencia = abs(promedio - resultado)
+        resultado = promedio
+        if verbose:
+            print "Estimado: %s - Cociente: %s - Promedio: %s - Diff: %s" % (str(resultado),
+            str(cociente)[:5], str(promedio)[:5], str(diferencia))
+        if diferencia < err:
+            break
 
     return resultado

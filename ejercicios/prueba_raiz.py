@@ -19,6 +19,6 @@ except ValueError:
     print "Error: err debe ser numérico!"
     exit()
 
-r = raiz_newton(x, err)
+r = raiz_newton(x, err, True)
 print "La raiz cuadrada de %s es %s con una tolerancia de %s. Raiz de python: %s" % \
       (x, r, err, math.sqrt(x))
