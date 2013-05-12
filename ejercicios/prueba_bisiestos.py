@@ -21,4 +21,4 @@ except ValueError:
 while year1 <= year2:
     if es_bisiesto(year1):
         print "El año %d es bisiesto " % (year1)
-        year1 += 1
+    year1 += 1
