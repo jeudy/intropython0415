@@ -5,6 +5,8 @@
 Ejemplo de manejo de excepciones en python
 """
 
+# Dummy comment para probar integración con git.
+
 import random
 
 print "Digite un numero que sera denominador de division: "
