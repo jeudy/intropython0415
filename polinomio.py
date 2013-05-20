@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 
 """
-Clase Polinomio: representa un polinimio de 1 variable
+Clase Polinomio: representa un polinomio de 1 variable
 como la lista de los coeficientes (en orden inverso).
 Metodos:
     evaluar: recibe el valor de x en el cual evaluar el polinomio
